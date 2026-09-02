@@ -1,0 +1,61 @@
+/* Global reset */
+* {
+ box-sizing: border-box;
+}
+/* Page-wide defaults */
+body {
+ font-family: Georgia, 'Times New Roman', serif;
+ font-size: 16px;
+ color: #333333;
+ background-color: #F0F5F7;
+ max-width: 800px;
+ margin: 2rem auto;
+ padding: 0 1.5rem;
+}
+/* Headings */
+h1 {
+ color: #1AA3B8;
+ font-size: 2rem;
+ border-bottom: 2px solid #1AA3B8;
+ padding-bottom: 0.4rem;
+}
+h2 {
+ color: #1AA3B8;
+ font-size: 1.3rem;
+ margin-top: 0;
+}
+/* Links */
+a {
+ color: #1AA3B8;
+ text-decoration: none;
+}
+a:hover {
+ text-decoration: underline;
+}
+/* Navigation */
+nav {
+ margin-top: 2rem;
+ font-size: 0.95rem;
+}
+/* Images */
+img {
+ max-width: 100%;
+ display: block;
+ margin: 1rem 0;
+}
+/* Card style — applies to all three .favorite divs */
+.favorite {
+ background-color: #FFFFFF;
+ border: 2px solid #1AA3B8;
+ border-radius: 8px;
+ padding: 1.2rem 1.5rem;
+ margin-bottom: 1.2rem;
+}
+/* Remove top margin from the very first card */
+.favorite:first-child {
+ margin-top: 0;
+}
+.favorite:hover {
+ border-color: #096B7F;
+ box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
