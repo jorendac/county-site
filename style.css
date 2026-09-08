@@ -50,8 +50,10 @@ img {
  margin-top: 0;
 }
 .favorite:hover {
+ background-color: #7fe0ac;
  border-color: #07511f;
- box-shadow: 0 4px 16px rgba(18, 167, 98, 0.1);
+ box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+ transform: translateY(-4px);
 }
 table {
   border-collapse: collapse;
