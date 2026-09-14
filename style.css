@@ -91,3 +91,30 @@ nav a:hover {
   text-decoration: underline;
   color: #638bb1;
 }
+
+/* Coordinates Tracker */
+
+input[type="text"] {
+  width: 250px;
+  padding: 8px 10px;
+  margin: 6px 0 12px 0;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  display: block;
+}
+
+button {
+  padding: 10px 18px;
+  margin-top: 8px;
+  background-color: #2c6e49;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1f4d33;
+}

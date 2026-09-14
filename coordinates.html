@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coordinates Checker</title>
+  <link rel="stylesheet" href="style.css">
+  
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+  <h1>Coordinate Checker</h1>
+  <p>Enter a latitude and longitude to check if the point falls within the continental US.</p>
+
+  <label for="lat-input">Latitude:</label>
+  <input type="text" id="lat-input" placeholder="e.g. 39.9">
+  <br>
+
+  <label for="lon-input">Longitude:</label>
+  <input type="text" id="lon-input" placeholder="US longitudes are negative, e.g. -75.3">
+  <br>
+
+  <button onclick="checkCoords()">Check Coordinates</button>
+
+  <div id="result"></div>
+  
+
+  <div id="map" style="height: 400px; width: 100%; margin-top: 20px;"></div>
+
+  <script src="js/coordinates.js"></script>
+</body>
+</html>
