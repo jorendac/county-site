@@ -24,40 +24,28 @@ console.log("Description:", description.textContent);
 // ============================================
 // PART 2: REST API + JSON
 // ============================================
-const params = new URLSearchParams({
- lat: 39.994, // your county seat latitude
- lon: -74.789, // your county seat longitude (negative = West)
- callsign: "WXVU", // your chosen station
- request_type: 4,
- search_freq: "none", pi_code: "none",
- sig_strength: "null", startMiles: "none",
- miles: "null", format: "none",
- rxHeight: 10, measurementUnit: "feet"
-});
+const station = {
+ callsign: "WXVU",
+ frequency: 89.1,
+    city: "Villanova",
+    state: "PA",
+    field_strength: 25.6,
+    distance: 29.1
+};
 
-async function loadStation() {
- const url = `http://52.151.197.43/?${params}`;
- try {
- const response = await fetch(url);
- if (!response.ok) {
- throw new Error(`Response status: ${response.status}`);
- }
- const data = await response.json();
- const station = data.data[0];
+
+
+
+ 
  const result = document.querySelector("#station-result");
  const detail = document.querySelector("#station-detail");
  // YOUR CODE: set result.textContent to show callsign, frequency, city, and state
-result.textContent = `Station: ${station.callsign}, Frequency: ${station.frequency}, City: ${station.city}, State: ${station.state}`;
+result.textContent = `${station.callsign} - ${station.frequency} FM - ${station.city}, ${station.state}`;
  // YOUR CODE: set detail.textContent to show field_strength and distance
  // use .toFixed(1) on both numbers
 detail.textContent = `Field Strength: ${station.field_strength.toFixed(1)}, Distance: ${station.distance.toFixed(1)} miles`;
 
 
- } catch (error) {
- console.error(error.message);
- }
-}
-loadStation();
 
 // ============================================
 // PART 4: Toggle & Events
