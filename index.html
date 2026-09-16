@@ -9,7 +9,7 @@
  <script src="js/county.js"></script>
  <body>
  <h1>Welcome to  THE Burlington County, New Jersey</h1>
- <p>Burlington County is the largest county in New Jersey by area.</p>
+ <p id="county-desc"> Burlington County is the largest county in New Jersey by area.</p>
  <p>The county seat is Mount Holly.</p>
  <p>English Quakers Settled here in 1677, almost a hundred years before the US became a nation</p>
  
@@ -20,13 +20,29 @@
     <a href="https://en.wikipedia.org/wiki/Burlington_County,_New_Jersey" target="_blank" rel="noopener noreferrer">Wikipedia</a>.
   </p>
 
+  <button id="toggle-btn">Hide Station</button> 
+  
+  <div id="station-section">
+ <h2>Radio Station Signal Check</h2>
+ <p id="station-result"></p>
+ <p id="station-detail"></p>
+</div>
+
+<div id="water-section">
+ <h2>Local Waters</h2>
+ <p>Add a sentence about a body of water in your county.</p>
+ <button id="water-btn">Show Photo</button>
+ <div id="water-photo"></div>
+</div>
 
  <nav>
  <a href="towns.html">Notable Towns</a> |
  <a href="mytown.html">My Favorite Places</a> |
  <a href="coordinates.html">Coordinates Checker</a>
  </nav>
- 
 
+
+
+<script src="js/dom.js"></script>
 </body>
 </html>

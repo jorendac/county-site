@@ -27,11 +27,7 @@ function classifyCounty(pop) {
  }
 }
 
-for (let i = 1; i <= 5; i++) {
- let message = "County #" + i;
- var lastCount = i;
- console.log(message);
-}
+
 
 userChoice = prompt(
  "What would you like to know about " + county.name + "?\n"
