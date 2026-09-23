@@ -3,7 +3,7 @@
 const county = {
  name: "Burlington ", // county name
  state: "New Jersey", // state
- population: 485356, // current population
+ population: "485k", // current population
  seat: "Mount Holly", // county seat
  founded: 1677, // year founded
  areaSqMi: 827, // area in square miles

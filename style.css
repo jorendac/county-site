@@ -20,7 +20,7 @@ h2 {
 }
 /* Links */
 a {
- color: #6b07a9;
+ color: #172ccc;
  text-decoration: none;
 }
 a:hover {
@@ -28,8 +28,10 @@ a:hover {
 }
 /* Navigation */
 nav {
- margin-top: 2rem;
- font-size: 1rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  display: flex;
+  gap: 1.25rem;
 }
 /* Images */
 img {
@@ -82,14 +84,16 @@ h1 {
 
 nav a {
   color: #3e3975;
-  text-decoration: none;
   font-weight: bold;
-  margin: 0 6px;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
-  text-decoration: underline;
   color: #638bb1;
+  border-bottom-color: #638bb1;
+  text-decoration: none;
 }
 
 /* Coordinates Tracker */
@@ -121,3 +125,21 @@ button:hover {
 }
 
 .hidden { display: none; }
+
+.result-inside {
+  background-color: #d4f5dd;
+  color: #1b5e20;
+  border: 2px solid #2e7d32;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: bold;
+}
+
+.result-outside {
+  background-color: #fbdada;
+  color: #8b1a1a;
+  border: 2px solid #c62828;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: bold;
+}

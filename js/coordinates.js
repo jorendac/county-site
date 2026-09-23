@@ -12,9 +12,12 @@ const myCounty = {
 
 console.log(myCounty);
 
+const checkBtn = document.querySelector("#check-btn");
+const resultDiv = document.querySelector("#result");
+
 // Check Coordinates Function 
 
-function checkCoords() {
+checkBtn.addEventListener("click", () => {
  // Read input values from the form (provided)
 
  const latInput = document.getElementById('lat-input').value;
@@ -26,14 +29,15 @@ function checkCoords() {
 const lat = parseFloat(latInput);
 const lon = parseFloat(lonInput);
 
+resultDiv.classList.remove("result-inside", "result-outside");
+
  // STEP B: Validate — check that both values are actual numbers
  // Hint: isNaN() returns true if the value is not a number
  // If either input is invalid, set a helpful message and return early
  // Your code here:
 
 if (isNaN(lat) || isNaN(lon)) {
-  document.getElementById('result').textContent = "Please enter valid numbers for latitude and longitude.";
-  return;
+  resultDiv.textContent = "Please enter valid numbers for latitude and longitude.";  return;
 }
 
  // STEP C: Check the boundaries using your myCounty object
@@ -44,13 +48,24 @@ if (isNaN(lat) || isNaN(lon)) {
  
  let result;
 
- if (lat >= myCounty.minLat && lat <= myCounty.maxLat && lon >= myCounty.minLon && lon <= myCounty.maxLon) {
-    result = "YES! Those coordinates are INSIDE " + myCounty.name + "!";
-    } else {
-    result = "NO! Those coordinates are OUTSIDE " + myCounty.name + ".";
-    }
+  if (lat >= myCounty.minLat && lat <= myCounty.maxLat && lon >= myCounty.minLon && lon <= myCounty.maxLon) {
+  result = "YES! Those coordinates are INSIDE " + myCounty.name + "!";
+
+  const midLat = (myCounty.minLat + myCounty.maxLat) / 2;
+
+  if (lat >= midLat) {
+    result += " You're in the northern half of " + myCounty.name + ".";
+  } else {
+    result += " You're in the southern half of " + myCounty.name + ".";
+  }
+
+  resultDiv.classList.add("result-inside");
+} else {
+  result = "NO! Those coordinates are OUTSIDE " + myCounty.name + ".";
+  resultDiv.classList.add("result-outside");
+}
  
- document.getElementById('result').textContent = result;
+  resultDiv.textContent = result;
 
  if (marker) {
   map.removeLayer(marker); // remove old pin
@@ -58,7 +73,7 @@ if (isNaN(lat) || isNaN(lon)) {
 marker = L.marker([lat, lon]).addTo(map);
 map.setView([lat, lon], 10); // recenter map to the new pin
 
-}
+});
 
 //map view
 let map = L.map('map').setView([39.9, -75.3], 8); 
